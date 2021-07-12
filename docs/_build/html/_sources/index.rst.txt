@@ -7,9 +7,20 @@ Welcome to sysbiotech's documentation!
 ======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
-
+   
+   GeTPRA
+   ReconManager
+   DeepEC
+   DeepDDI
+   iBridge
+   MELI3D
+   MFA13C
+   DeepTFactor
+   RetroPrecursorSelection
+   DeepRFC
+   
 
 
 Indices and tables

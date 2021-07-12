@@ -1,0 +1,615 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>ReconManager &mdash; sysbiotech  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DeepEC" href="DeepEC.html" />
+    <link rel="prev" title="GeTPRA" href="GeTPRA.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> sysbiotech
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="GeTPRA.html">GeTPRA</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ReconManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepEC.html">DeepEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepDDI.html">DeepDDI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iBridge.html">iBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MELI3D.html">MELI-3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MFA13C.html">13C-MFA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepTFactor.html">DeepTFactor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RetroPrecursorSelection.html">RetroPrecursorSelection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepRFC.html">DeepRFC</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sysbiotech</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>ReconManager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ReconManager.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ReconManager">
+<span id="reconmanager"></span><h1>ReconManager<a class="headerlink" href="#module-ReconManager" title="Permalink to this headline">¶</a></h1>
+<p><strong>Recon-manager procedure</strong></p>
+<p>This project is to develop a framework that systematically predicts Gene-Transcript-Protein-Reaction Associations (GeTPRA) in human metabolims and updates a human genome-scale metabolic model (GEM) accordingly. <strong>Recon manager</strong> is a part of the project, which is a collection of scripts to generate Recon 2M.1 and simulate Recon models.</p>
+<hr class="docutils" />
+<p><strong>Features</strong>
+<strong>Recon manager</strong> contains scripts that implement following tasks independently:</p>
+<ul class="simple">
+<li><p>Convert GPR to TPR associations</p></li>
+<li><p>Update metabolite information</p></li>
+<li><p>Calculate model statistics</p></li>
+<li><p>Evaluate functionality of metabolic model</p></li>
+<li><p>Reconstruct personal GEMs using tINIT</p></li>
+</ul>
+<p><strong>Installation</strong>
+<em>Major dependencies</em>
+- [gurobipy](<a class="reference external" href="http://www.gurobi.com/">http://www.gurobi.com/</a>)</p>
+<p><em>Procedure</em>
+<strong>Note</strong>: This source code was developed in Linux, and has been tested in Ubuntu 14.04.5 LTS (i7-4770 CPU &#64; 3.40GHz)</p>
+<ol class="arabic simple">
+<li><p>Clone the repository</p></li>
+<li><p>Create and activate virtual environment</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ virtualenv venv
+$ source venv/bin/activate
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install packages at the root of the repository</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pip --upgrade
+$ pip install -r requirements.txt
+</pre></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>Install [gurobipy](<a class="reference external" href="http://www.gurobi.com/">http://www.gurobi.com/</a>)</p>
+<blockquote>
+<div><p>In our case, we installed gurobipy in the root of a server, and created its symbolic link in <cite>venv</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ln -s /usr/local/lib/python2.7/dist-packages/gurobipy/ $HOME/recon-manager/venv/lib/python2.7/site-packages/
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><em>Feature: Convert GPR to TPR associations</em>
+Input arguments and corresponding files
+Following working input files can be found in: <cite>./input_data/GPR_to_TPR_inputs</cite>.
+These files were used for the data presented in the manuscript.</p>
+<ul>
+<li><p><cite>-o</cite> : Output directory</p></li>
+<li><dl class="simple">
+<dt><cite>-model</cite><span class="classifier">COBRA-compliant SBML file (generic human GEM)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>Recon2M.1_Entrez_Gene.xml</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>-gene_transcript_information</cite><span class="classifier">A list of gene IDs and their matching transcript IDs</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>Ensembl88_GRCh38_all_transcript_information.txt</cite></p></li>
+</ul>
+<p><strong>File format</strong></p>
+<blockquote>
+<div><p>NCBI gene ID    Gene stable ID  Transcript stable ID    RefSeq mRNA ID  UCSC Stable ID
+2733    ENSG00000119392 ENST00000309971 NM_001003722    uc004bvj.4
+2733    ENSG00000119392 ENST00000372770 NM_001499       uc004bvi.4
+5690    ENSG00000126067 ENST00000373237 NM_002794       uc001bzf.4
+5690    ENSG00000126067 ENST00000373237 NM_001199779    uc001bzf.4
+5690    ENSG00000126067 ENST00000621781 NM_001199780    uc021olh.3</p>
+</div></blockquote>
+<p><strong>Download procedure</strong></p>
+<ol class="arabic">
+<li><p>Go to [Ensembl BioMarts](<a class="reference external" href="http://www.ensembl.org/biomart/martview">http://www.ensembl.org/biomart/martview</a>)</p></li>
+<li><p>Click <em>Dataset</em> on the left menu</p>
+<blockquote>
+<div><p>Select <em>Ensembl Genes 89</em> in the drop-down menu <em>CHOOSE DATABASE</em></p>
+<p>Select <em>Human genes (GRCh38.p10)</em> in the drop-down menu <em>CHOOSE DATASET</em></p>
+</div></blockquote>
+</li>
+<li><p>Click <em>Filters</em> on the left menu</p>
+<blockquote>
+<div><p>Click <em>GENE:</em> in the main menu (center)</p>
+<p>Check <em>Gene type</em> and select <em>protein_coding</em></p>
+</div></blockquote>
+</li>
+<li><p>Click <em>Attributes</em> on the left menu</p>
+<blockquote>
+<div><p>Check <em>Features</em> in the center</p>
+</div></blockquote>
+</li>
+<li><p>Click both <em>GENE:</em> and <em>EXTERNAL:</em> in the main menu (center)</p>
+<blockquote>
+<div><p><em>GENE:</em> -&gt; <em>Ensembl</em> -&gt; Uncheck <em>Gene stable ID</em> and <em>Transcript stable ID</em></p>
+<p>Check following items in order:</p>
+<ul class="simple">
+<li><p><em>EXTERNAL:</em> -&gt; <em>External References (max 3)</em> -&gt; <em>NCBI gene ID</em></p></li>
+<li><p><em>GENE:</em> -&gt; <em>Ensembl</em> -&gt; <em>Gene stable ID</em></p></li>
+<li><p><em>GENE:</em> -&gt; <em>Ensembl</em> -&gt; <em>Transcript stable ID</em></p></li>
+<li><p><em>EXTERNAL:</em> -&gt; <em>External References (max 3)</em> -&gt; <em>RefSeq mRNA ID</em></p></li>
+<li><p><em>EXTERNAL:</em> -&gt; <em>External References (max 3)</em> -&gt; <em>UCSC Stable ID</em></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click the button <em>Results</em> on the top left</p></li>
+<li><p>Click the button <em>Go</em> in the top center</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+<p><em>Implementation</em>
+<strong>Note</strong>: Running this script takes ~ 4 m</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python model_GPR_to_TPR_converter.py \
+-o ./results/GPR_to_TPR_results/ \
+-gene_transcript_information ./input_data/GPR_to_TPR_inputs/Ensembl88_GRCh38_all_transcript_information.txt \
+-model ./input_data/GPR_to_TPR_inputs/Recon2M.1_Entrez_Gene.xml
+</pre></div>
+</div>
+<p><em>Feature: Update metabolite information</em>
+Input arguments and corresponding files
+Following working input files can be found in: <cite>./input_data/metabolite_information_update_inputs</cite>.
+These files were used for the data presented in the manuscript.</p>
+<ul>
+<li><p><cite>-o</cite> : Output directory</p></li>
+<li><dl class="simple">
+<dt><cite>-model</cite><span class="classifier">COBRA-compliant SBML file (generic human GEM)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>Recon2M.1_Entrez_Gene.xml</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>-mnx_xref</cite><span class="classifier">Info on chemical identifiers from [MetaNetX](<a class="reference external" href="http://www.metanetx.org/">http://www.metanetx.org/</a>)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>chem_xref.tsv</cite></p></li>
+<li><p>Click [chem_xref.tsv](<a class="reference external" href="http://www.metanetx.org/cgi-bin/mnxget/mnxref/chem_xref.tsv">http://www.metanetx.org/cgi-bin/mnxget/mnxref/chem_xref.tsv</a>) for downloading</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>-mnx_prop</cite><span class="classifier">Info on chemical structures from [MetaNetX](<a class="reference external" href="http://www.metanetx.org/">http://www.metanetx.org/</a>)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>chem_prop.tsv</cite></p></li>
+<li><p>Click [chem_prop.tsv](<a class="reference external" href="http://www.metanetx.org/cgi-bin/mnxget/mnxref/chem_prop.tsv">http://www.metanetx.org/cgi-bin/mnxget/mnxref/chem_prop.tsv</a>) for downloading</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>-bigg</cite><span class="classifier">Info on BiGG metabolites from [BiGG Models](<a class="reference external" href="http://bigg.ucsd.edu/">http://bigg.ucsd.edu/</a>)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>bigg_models_metabolites.txt</cite></p></li>
+<li><p>Click [bigg_models_metabolites.txt](<a class="reference external" href="http://bigg.ucsd.edu/static/namespace/bigg_models_metabolites.txt">http://bigg.ucsd.edu/static/namespace/bigg_models_metabolites.txt</a>) for downloading</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>-chebi</cite><span class="classifier">Info on ChEBI and InChI from [ChEBI](<a class="reference external" href="https://www.ebi.ac.uk/chebi/init.do">https://www.ebi.ac.uk/chebi/init.do</a>)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>chebiId_inchi.tsv</cite></p></li>
+<li><p>Click [chebiId_inchi.tsv](<a class="reference external" href="ftp://ftp.ebi.ac.uk/pub/databases/chebi/Flat_file_tab_delimited/chebiId_inchi.tsv">ftp://ftp.ebi.ac.uk/pub/databases/chebi/Flat_file_tab_delimited/chebiId_inchi.tsv</a>) for downloading</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><em>Implementation</em>
+<strong>Note</strong>: Running this script takes ~ 5 s</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python model_update_metabolite_information.py \
+-o ./results/metabolite_information_update_results/ \
+-model ./input_data/metabolite_information_update_inputs/Recon2M.1_Entrez_Gene.xml \
+-mnx_xref ./input_data/metabolite_information_update_inputs/chem_xref.tsv \
+-mnx_prop ./input_data/metabolite_information_update_inputs/chem_prop.tsv \
+-bigg ./input_data/metabolite_information_update_inputs/bigg_models_metabolites.txt \
+-chebi ./input_data/metabolite_information_update_inputs/chebiId_inchi.tsv
+</pre></div>
+</div>
+<p><em>Feature: Calculate model statistics</em>
+Input arguments and corresponding files
+Following working input files can be found in: <cite>./input_data/model_function_inputs</cite>.
+These files were used for the data presented in the manuscript.</p>
+<ul>
+<li><p><cite>-o</cite> : Output directory</p></li>
+<li><dl class="simple">
+<dt><cite>-model</cite><span class="classifier">COBRA-compliant SBML file (generic human GEM)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>Recon2M.1_Entrez_Gene.xml</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>-medium</cite><span class="classifier">A representative medium (RPMI-1640 medium)</span></dt><dd><ul class="simple">
+<li><p>File name in the source: <cite>RPMI1640_medium.txt</cite></p></li>
+</ul>
+<p><strong>File format</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EX_gly_LPAREN_e_RPAREN_</span>     <span class="o">-</span><span class="mf">0.05</span>   <span class="mi">1000</span>
+<span class="n">EX_arg_L_LPAREN_e_RPAREN_</span>   <span class="o">-</span><span class="mf">0.05</span>   <span class="mi">1000</span>
+<span class="n">EX_asn_L_LPAREN_e_RPAREN_</span>   <span class="o">-</span><span class="mf">0.05</span>   <span class="mi">1000</span>
+<span class="n">EX_asp_L_LPAREN_e_RPAREN_</span>   <span class="o">-</span><span class="mf">0.05</span>   <span class="mi">1000</span>
+<span class="n">EX_cys_L_LPAREN_e_RPAREN_</span>   <span class="o">-</span><span class="mf">0.05</span>   <span class="mi">1000</span>
+<span class="n">EX_glu_L_LPAREN_e_RPAREN_</span>   <span class="o">-</span><span class="mf">0.05</span>   <span class="mi">1000</span>
+<span class="n">EX_his_L_LPAREN_e_RPAREN_</span>   <span class="o">-</span><span class="mf">0.05</span>   <span class="mi">1000</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<p><em>Implementation</em>
+<strong>Note</strong>: Running this script takes ~ 47 m</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python model_metabolic_model_statistics.py \
+-o ./results/model_statistics_results/ \
+-medium ./input_data/model_function_inputs/RPMI1640_medium.txt \
+-model ./input_data/model_function_inputs/Recon2M.1_Entrez_Gene.xml
+</pre></div>
+</div>
+<p><em>Feature: Evaluate functionality of metabolic model</em>
+Input arguments and corresponding files
+Following working input files can be found in: <cite>./input_data/model_function_inputs</cite>.
+These files were used for the data presented in the manuscript.</p>
+<ul class="simple">
+<li><p><cite>-o</cite> : Output directory</p></li>
+<li><dl class="simple">
+<dt><cite>-model</cite><span class="classifier">COBRA-compliant SBML file (generic human GEM)</span></dt><dd><ul>
+<li><p>File name in the source: <cite>Recon2M.1_Entrez_Gene.xml</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-medium</cite><span class="classifier">A representative medium (RPMI-1640 medium)</span></dt><dd><ul>
+<li><p>File name in the source: <cite>RPMI1640_medium.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-defined_medium</cite><span class="classifier">A defined minimal medium</span></dt><dd><ul>
+<li><p>File name in the source: <cite>Defined_medium.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-es_genes</cite><span class="classifier">A list of essential genes</span></dt><dd><ul>
+<li><p>File name in the source: <cite>Essential_genes_from_wang_et_al.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-ne_genes</cite><span class="classifier">A list of non-essential genes</span></dt><dd><ul>
+<li><p>File name in the source: <cite>Non_essential_genes_from_wang_et_al.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-c_source</cite><span class="classifier">A list of carbon sources</span></dt><dd><ul>
+<li><p>File name in the source: <cite>atp_carbon_source.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><cite>-biomass</cite> : Reaction ID for biomass generation equation</p></li>
+<li><p><cite>-oxygen</cite> : Reaction ID for oxygen uptake</p></li>
+<li><p><cite>-atp</cite> : Reaction ID for ATP production</p></li>
+</ul>
+<p><em>Implementation</em>
+<strong>Note</strong>: Directly insert reaction IDs in terminal for <cite>-biomass</cite>, <cite>-oxygen</cite> and <cite>-atp</cite></p>
+<p><strong>Note</strong>: Running this script takes ~ 7 m</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python model_metabolic_function.py \
+-o ./results/model_function_results/ \
+-model ./input_data/model_function_inputs/Recon2M.1_Entrez_Gene.xml \
+-medium ./input_data/model_function_inputs/RPMI1640_medium.txt \
+-defined_medium ./input_data/model_function_inputs/Defined_medium.txt \
+-es_genes ./input_data/model_function_inputs/Essential_genes_from_wang_et_al.txt \
+-ne_genes ./input_data/model_function_inputs/Non_essential_genes_from_wang_et_al.txt \
+-c_source ./input_data/model_function_inputs/atp_carbon_source.txt \
+-biomass biomass_reaction \
+-oxygen EX_o2_LPAREN_eRPAREN \
+-atp DM_atp_c_
+</pre></div>
+</div>
+<p><em>Feature: Reconstruct personal GEMs using [tINIT](http://msb.embopress.org/content/10/3/721.long)</em>
+Input arguments and corresponding files
+Following working input files can be found in: <cite>./input_data/tINIT_inputs</cite>.
+These files were used for the data presented in the manuscript.</p>
+<ul class="simple">
+<li><p><cite>-o</cite> : Output directory</p></li>
+<li><dl class="simple">
+<dt><cite>-model</cite><span class="classifier">COBRA-compliant SBML file (generic human GEM)</span></dt><dd><ul>
+<li><p>File name in the source: <cite>Recon2M.1_Entrez_Gene.xml</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-medium</cite><span class="classifier">A representative medium (RPMI-1640 medium)</span></dt><dd><ul>
+<li><p>File name in the source: <cite>RPMI1640_medium.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-task</cite><span class="classifier">A list of metabolic tasks</span></dt><dd><ul>
+<li><p>File name in the source: <cite>MetabolicTasks.csv</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-present_reaction</cite><span class="classifier">A list of reactions that should be present in model</span></dt><dd><ul>
+<li><p>File name in the source: <cite>essential_reactions.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-present_metabolite</cite><span class="classifier">A list of metabolites that should be present in model</span></dt><dd><ul>
+<li><p>File name in the source: <cite>essential_metabolites.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-i</cite><span class="classifier">Omics data</span></dt><dd><ul>
+<li><p>File name in the source: <cite>BLCA_T_TTL.csv</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><cite>-biomass</cite> : Reaction ID for biomass generation equation</p></li>
+</ul>
+<p><em>Implementation</em>
+<strong>Note</strong>: Directly insert a reaction ID in terminal for <cite>-biomass</cite></p>
+<p><strong>Note</strong>: Running this script for a Recon model takes ~ 8 m</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python personal_GEM_tINIT.py \
+-o ./results/tINIT_results/ \
+-medium ./input_data/tINIT_inputs/RPMI1640_medium.txt \
+-model ./input_data/tINIT_inputs/Recon2M.1_Entrez_Gene.xml \
+-biomass biomass_reaction \
+-task ./input_data/tINIT_inputs/MetabolicTasks.csv \
+-present_reaction ./input_data/tINIT_inputs/essential_reactions.txt \
+-present_metabolite ./input_data/tINIT_inputs/essential_metabolites.txt \
+-i ./input_data/tINIT_inputs/BLCA_N_TTL.csv
+</pre></div>
+</div>
+<p><em>Feature: Predict flux using transcript-level RNA-Seq data and GeTPRA</em>
+Input arguments and corresponding files
+Following working input files can be found in: <cite>./input_data/Flux_prediction</cite>.
+These files were used for the data presented in the manuscript.</p>
+<ul class="simple">
+<li><p><cite>-o</cite> : Output directory</p></li>
+<li><dl class="simple">
+<dt><cite>-g_model</cite><span class="classifier">COBRA-compliant SBML file (generic human GEM)</span></dt><dd><ul>
+<li><p>File name in the source: <cite>Recon2M.2_BiGG_UCSC_Transcript.xml</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-c_model</cite><span class="classifier">COBRA-compliant SBML file (context-specific human GEM)</span></dt><dd><ul>
+<li><p>File name in the source: <cite>LIHC_TCGA-BC-A10Q.xml</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-getpra</cite><span class="classifier">GeTPRA file</span></dt><dd><ul>
+<li><p>File name in the source: <cite>GeTPRA.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>-use_getpra</cite><span class="classifier">Option for flux prediction using transcript-level data</span></dt><dd><ul>
+<li><p>Insert`yes` for flux prediction using transcript-level data</p></li>
+<li><p>Insert`no` for flux prediction using gene-level data</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><em>Implementation</em>
+<strong>Note</strong>: Running this script takes ~ 7 m</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python flux_prediction.py \
+-o ./results/Flux_prediction/ \
+-i ./input_data/Flux_prediction/LIHC_TCGA-BC-A10Q.csv \
+-getpra ./input_data/Flux_prediction/GeTPRA.txt \
+-g_model ./input_data/Flux_prediction/Recon2M.2_BiGG_UCSC_Transcript.xml \
+-c_model ./input_data/Flux_prediction/LIHC_TCGA-BC-A10Q.xml \
+-use_getpra yes
+</pre></div>
+</div>
+<p><strong>Publication</strong>
+Jae Yong Ryu 1, Hyun Uk Kim 1 &amp; Sang Yup Lee. Framework and resource for more than 11,000 gene-transcript-protein-reaction associations in human metabolism., Proc. Natl. Acad. Sci. U.S.A., 2017, <a class="reference external" href="http://www.pnas.org/content/early/2017/10/23/1713050114">http://www.pnas.org/content/early/2017/10/23/1713050114</a></p>
+<hr class="docutils" />
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="DeepEC.html" class="btn btn-neutral float-right" title="DeepEC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GeTPRA.html" class="btn btn-neutral float-left" title="GeTPRA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Gi Bae Kim.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

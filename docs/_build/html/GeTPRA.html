@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>GeTPRA &mdash; sysbiotech  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ReconManager" href="ReconManager.html" />
+    <link rel="prev" title="Welcome to sysbiotech’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> sysbiotech
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GeTPRA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReconManager.html">ReconManager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepEC.html">DeepEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepDDI.html">DeepDDI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iBridge.html">iBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MELI3D.html">MELI-3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MFA13C.html">13C-MFA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepTFactor.html">DeepTFactor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RetroPrecursorSelection.html">RetroPrecursorSelection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DeepRFC.html">DeepRFC</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sysbiotech</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>GeTPRA</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/GeTPRA.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-GeTPRA">
+<span id="getpra"></span><h1>GeTPRA<a class="headerlink" href="#module-GeTPRA" title="Permalink to this headline">¶</a></h1>
+<p><strong>The GeTPRA framework</strong></p>
+<p>This project is to develop a framework that systematically predicts Gene-Transcript-Protein-Reaction Associations (GeTPRA) in human metabolims and updates a human genome-scale metabolic model (GEM) accordingly. This source code implements the GeTPRA framework.</p>
+<hr class="docutils" />
+<p><strong>Features</strong>
+This source code executes following steps in the GeTPRA framework in order:</p>
+<ul class="simple">
+<li><p>Get reactions from biochemical database using EC number</p></li>
+<li><p>Standardize metabolite information</p></li>
+<li><p>Compartmentalize metabolic reactions</p></li>
+<li><p>Generate GeTPRA</p></li>
+<li><p>Check ‘Exist in Recon 2M.1’</p></li>
+<li><p>Check ‘Blocked reaction’</p></li>
+<li><p>Check ‘Experimental evidence available’</p></li>
+</ul>
+<p>See below for the implementation of EFICAz and Wolf PSort (optional features)</p>
+<p><strong>Installation</strong>
+<strong>Procedure</strong>
+<strong>Note</strong>: This source code was developed in Linux, and has been tested in Ubuntu 14.04.5 LTS (i7-4770 CPU &#64; 3.40GHz)</p>
+<ol class="arabic simple">
+<li><p>Clone the repository</p></li>
+<li><p>Create and activate virtual environment</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ virtualenv venv
+$ source venv/bin/activate
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install packages at the root of the repository</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pip --upgrade
+$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p><strong>Input files for the GeTPRA framework</strong>
+Following working input files can be found in: <cite>getpra/input_data/getpra_inputs/</cite>. These files were used for the data presented in the manuscript.</p>
+<p><strong>Gene-transcript ID annotation file format</strong>
+- Download gene-transcript ID annotation file from [Ensembl BioMarts](<a class="reference external" href="http://www.ensembl.org/biomart/martview">http://www.ensembl.org/biomart/martview</a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NCBI</span> <span class="n">gene</span> <span class="n">ID</span>        <span class="n">Gene</span> <span class="n">stable</span> <span class="n">ID</span>  <span class="n">Transcript</span> <span class="n">stable</span> <span class="n">ID</span>    <span class="n">RefSeq</span> <span class="n">mRNA</span> <span class="n">ID</span>  <span class="n">UCSC</span> <span class="n">Stable</span> <span class="n">ID</span>
+<span class="mi">2733</span>        <span class="n">ENSG00000119392</span> <span class="n">ENST00000309971</span> <span class="n">NM_001003722</span>    <span class="n">uc004bvj</span><span class="mf">.4</span>
+<span class="mi">2733</span>        <span class="n">ENSG00000119392</span> <span class="n">ENST00000372770</span> <span class="n">NM_001499</span>       <span class="n">uc004bvi</span><span class="mf">.4</span>
+<span class="mi">5690</span>        <span class="n">ENSG00000126067</span> <span class="n">ENST00000373237</span> <span class="n">NM_002794</span>       <span class="n">uc001bzf</span><span class="mf">.4</span>
+<span class="mi">5690</span>        <span class="n">ENSG00000126067</span> <span class="n">ENST00000373237</span> <span class="n">NM_001199779</span>    <span class="n">uc001bzf</span><span class="mf">.4</span>
+<span class="mi">5690</span>        <span class="n">ENSG00000126067</span> <span class="n">ENST00000621781</span> <span class="n">NM_001199780</span>    <span class="n">uc021olh</span><span class="mf">.3</span>
+</pre></div>
+</div>
+<p><strong>Download procedure</strong></p>
+<ol class="arabic">
+<li><p>Go to [Ensembl BioMarts](<a class="reference external" href="http://www.ensembl.org/biomart/martview">http://www.ensembl.org/biomart/martview</a>)</p></li>
+<li><p>Click <em>Dataset</em> on the left menu</p>
+<blockquote>
+<div><p>Select <em>Ensembl Genes 89</em> in the drop-down menu <em>CHOOSE DATABASE</em></p>
+<p>Select <em>Human genes (GRCh38.p10)</em> in the drop-down menu <em>CHOOSE DATASET</em></p>
+</div></blockquote>
+</li>
+<li><p>Click <em>Filters</em> on the left menu</p>
+<blockquote>
+<div><p>Click <em>GENE:</em> in the main menu (center)</p>
+<p>Check <em>Gene type</em> and select <em>protein_coding</em></p>
+</div></blockquote>
+</li>
+<li><p>Click <em>Attributes</em> on the left menu</p>
+<blockquote>
+<div><p>Check <em>Features</em> in the center</p>
+</div></blockquote>
+</li>
+<li><p>Click both <em>GENE:</em> and <em>EXTERNAL:</em> in the main menu (center)</p>
+<blockquote>
+<div><p><em>GENE:</em> -&gt; <em>Ensembl</em> -&gt; Uncheck <em>Gene stable ID</em> and <em>Transcript stable ID</em></p>
+<p>Check following items in order:</p>
+<ul class="simple">
+<li><p><em>EXTERNAL:</em> -&gt; <em>External References (max 3)</em> -&gt; <em>NCBI gene ID</em></p></li>
+<li><p><em>GENE:</em> -&gt; <em>Ensembl</em> -&gt; <em>Gene stable ID</em></p></li>
+<li><p><em>GENE:</em> -&gt; <em>Ensembl</em> -&gt; <em>Transcript stable ID</em></p></li>
+<li><p><em>EXTERNAL:</em> -&gt; <em>External References (max 3)</em> -&gt; <em>RefSeq mRNA ID</em></p></li>
+<li><p><em>EXTERNAL:</em> -&gt; <em>External References (max 3)</em> -&gt; <em>UCSC Stable ID</em></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click the button <em>Results</em> on the top left</p></li>
+<li><p>Click the button <em>Go</em> in the top center</p></li>
+</ol>
+<ul class="simple">
+<li><dl class="simple">
+<dt>File names in the source:</dt><dd><ul>
+<li><p><cite>Ensembl_GRCh38_EnsemblDB_v84.txt</cite></p></li>
+<li><p><cite>Ensembl_GRCh38_EnsemblDB_v85.txt</cite></p></li>
+<li><p><cite>Ensembl_GRCh38_EnsemblDB_v86.txt</cite></p></li>
+<li><p><cite>Ensembl_GRCh38_EnsemblDB_v87.txt</cite></p></li>
+<li><p><cite>Ensembl_GRCh38_EnsemblDB_v88.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><em>`chem_xref.tsv` from `MetaNetX`</em>
+- Download [chem_xref.tsv](<a class="reference external" href="http://www.metanetx.org/cgi-bin/mnxget/mnxref/chem_xref.tsv">http://www.metanetx.org/cgi-bin/mnxget/mnxref/chem_xref.tsv</a>) from [MetaNetX](<a class="reference external" href="http://www.metanetx.org/">http://www.metanetx.org/</a>)
+- File name in the source: <cite>chem_xref.tsv</cite></p>
+<p><em>`gene2ensembl.gz` from `NCBI FTP`</em>
+- Download [gene2ensembl.gz](<a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2ensembl.gz">ftp://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2ensembl.gz</a>) from [NCBI FTP](<a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/">ftp://ftp.ncbi.nlm.nih.gov/</a>)
+- File name in the source: <cite>gene2ensembl.gz</cite></p>
+<p><em>`appris_data.principal.txt` from `APPRIS`</em>
+- Download [appris_data.principal.txt](<a class="reference external" href="http://apprisws.bioinfo.cnio.es/pub/current_release/datafiles/homo_sapiens/GRCh38/appris_data.principal.txt">http://apprisws.bioinfo.cnio.es/pub/current_release/datafiles/homo_sapiens/GRCh38/appris_data.principal.txt</a>) for annotation of principal isoform from [APPRIS](<a class="reference external" href="http://appris.bioinfo.cnio.es/">http://appris.bioinfo.cnio.es/</a>)
+- File name in the source: <cite>appris_data.principal.txt</cite></p>
+<p><em>`subcellular_location.csv` from `The Human Protein Atlas`</em>
+- Download [subcellular_location.csv](<a class="reference external" href="http://www.proteinatlas.org/download/subcellular_location.csv.zip">http://www.proteinatlas.org/download/subcellular_location.csv.zip</a>) with subcellular localization information from [The Human Protein Atlas](<a class="reference external" href="http://www.proteinatlas.org/">http://www.proteinatlas.org/</a>)
+- File name in the source: <cite>subcellular_location.csv</cite></p>
+<p><em>Recon model</em>
+- Prepare a human genome-scale metabolic model with consistent TPR associations and that shows biologically reasonable simulation performance
+- File name in the source: <cite>Recon2M.1_Entrez_Gene.xml</cite></p>
+<p><em>EFICAz output file as input file</em>
+- File name in the source: <cite>20170110_EFICAz_result.txt</cite>.
+- EFICAz can be run with a different set of peptide sequences (see below).</p>
+<p><em>WoLF PSort output file as input file</em>
+- File name in the source: <cite>20170110_WoLFPSort_result.txt</cite>
+- WoLF PSort can be run with a different set of peptide sequences (see below).</p>
+<p><em>BRENDA data</em>
+- Set user email address and password before implementing the GeTPRA framework. The framework programmatically fetches BRENDA data from BRENDA through its API.</p>
+<p>##Implementation
+<strong>Note</strong>: All the arguments shown below should be provided when implementing the framework</p>
+<p><strong>Note</strong>: Make sure to provide own information for <cite>-brenda_email</cite> and <cite>-brenda_pw</cite></p>
+<p><strong>Note</strong>: Implementation of this source code takes long (~ 8 h)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python run_GeTPRA_framework.py \
+    -output_dir ./getpra_results/ \
+    -ec ./input_data/getpra_inputs/20170110_EFICAz_result.txt \
+    -sl ./input_data/getpra_inputs/20170110_WoLFPSort_result.txt \
+    -brenda_email user_email_address \
+    -brenda_pw user_password \
+    -mnx_xref ./input_data/getpra_inputs/chem_xref.tsv \
+    -ensembl ./input_data/getpra_inputs/Ensembl_GRCh38_EnsemblDB_v88.txt \
+    -appris ./input_data/getpra_inputs/appris_data.principal.txt \
+    -model ./input_data/getpra_inputs/Recon2M.1_Entrez_Gene.xml \
+    -hpa ./input_data/getpra_inputs/subcellular_location.csv \
+    -ncbi_id_information ./input_data/getpra_inputs/gene2ensembl.gz
+</pre></div>
+</div>
+<p>##Output files from the GeTPRA framework
+- Raw output files from the GeTPRA framework, which were used for the publication, are available in: <cite>getpra/getpra_results_publication_version/</cite>
+- New output files upon implementation of the framework are generated in: <cite>getpra/getpra_results/</cite>. This folder is automatically created.</p>
+<p><em>Implementation of EFICAz and Wolf PSort (optional)</em>
+Output files of EFICAz and Wolf PSort serve as input files for the GeTPRA framework.</p>
+<p><em>Peptide sequences of metabolic genes as inputs for EFICAz and Wolf PSort</em>
+- Get peptide sequences of metabolic genes by implementing <cite>./input_data/get_peptide_sequences.py</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python ./input_data/get_peptide_sequences.py \
+-output_dir ./input_data/getpra_inputs/ \
+-model ./input_data/getpra_inputs/Recon2M.1_Entrez_Gene.xml \
+-ensembl ./input_data/getpra_inputs/Ensembl_GRCh38_EnsemblDB_v88.txt
+</pre></div>
+</div>
+<ul>
+<li><p>File name in the source: <cite>Ensembl_peptide_seq_metabolic_genes.fa</cite></p>
+<blockquote>
+<div><p>&gt;ENSP00000452494|ENST00000448914
+TGGY
+&gt;ENSP00000488240|ENST00000631435
+GTGG
+&gt;ENSP00000487941|ENST00000632684
+GTGG
+&gt;ENSP00000451515|ENST00000434970
+PSY
+&gt;ENSP00000451042|ENST00000415118
+EI</p>
+</div></blockquote>
+</li>
+</ul>
+<p><em>Installation</em>
+1. Download [EFICAz2.5](<a class="reference external" href="http://cssb.biology.gatech.edu/skolnick/webservice/EFICAz2/index.html">http://cssb.biology.gatech.edu/skolnick/webservice/EFICAz2/index.html</a>)</p>
+<ol class="arabic simple" start="2">
+<li><p>Set environment variable for EFICAz2.5</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export EFICAz25_PATH=&quot;[insert-destination-directory]/EFICAz2.5.1/&quot;
+$ export PATH=&quot;${PATH}:${EFICAz25_PATH}&quot;
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Download [WoLF PSort](<a class="reference external" href="https://github.com/fmaguire/WoLFPSort">https://github.com/fmaguire/WoLFPSort</a>)</p></li>
+<li><p>Set environment variable for WoLF PSort</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export WoLFPSort_PATH=&quot;[insert-destination-directory]/WoLFPSort/&quot;
+$ export PATH=&quot;${PATH}:${WoLFPSort_PATH}&quot;
+</pre></div>
+</div>
+</div></blockquote>
+<p><em>Implementation of EFICAz and Wolf PSort</em>
+- Predict EC numbers using [EFICAz2.5](<a class="reference external" href="http://cssb.biology.gatech.edu/skolnick/webservice/EFICAz2/index.html">http://cssb.biology.gatech.edu/skolnick/webservice/EFICAz2/index.html</a>)</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python $EFICAz25_PATH/eficaz2.5 Ensembl_peptide_seq_metabolic_genes.fa
+</pre></div>
+</div>
+</div></blockquote>
+<ul>
+<li><p>Predict subcellular localization using [WoLF PSort](<a class="reference external" href="https://github.com/fmaguire/WoLFPSort">https://github.com/fmaguire/WoLFPSort</a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ WoLFPSort_PATH/bin/runWolfPsortSummary animal &lt; Ensembl_peptide_seq_metabolic_genes.fa
+</pre></div>
+</div>
+</li>
+<li><dl class="simple">
+<dt>Output files from the above two implementations using peptide sequences of entire human genes are available in:</dt><dd><ul class="simple">
+<li><p>EFICAz: <cite>getpra/input_data/20170110_EFICAz_result_using_all_human_genes.txt</cite></p></li>
+<li><p>Wolf PSort: <cite>getpra/input_data/20170110_WoLFPSort_result_using_all_human_genes.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><em>Extract metabolic genes from EFICAz and Wolf PSort output data obtained with entire human genes</em>
+- Extract metabolic genes from the EFICAz and Wolf PSort output data</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python ./input_data/get_EFICAz_WolfPSort_results.py \
+-output_dir ./input_data/getpra_inputs/ \
+-model ./input_data/getpra_inputs/Recon2M.1_Entrez_Gene.xml \
+-ec ./input_data/getpra_inputs/20170110_EFICAz_result_using_all_human_genes.txt \
+-sl ./input_data/getpra_inputs/20170110_WoLFPSort_result_using_all_human_genes.txt \
+-ensembl ./input_data/getpra_inputs/Ensembl_GRCh38_EnsemblDB_v88.txt
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Resulting output files in the source:</dt><dd><ul>
+<li><p>EFICAz: <cite>getpra/input_data/Trimmed_EFICAz_result.txt</cite></p></li>
+<li><p>Wolf PSort: <cite>getpra/input_data/Trimmed_WoLFPSort_result.txt</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Publication</strong>
+Jae Yong Ryu 1, Hyun Uk Kim 1 &amp; Sang Yup Lee. Framework and resource for more than 11,000 gene-transcript-protein-reaction associations in human metabolism., <em>Proc. Natl. Acad. Sci. U.S.A.</em>, 2017, <a class="reference external" href="http://www.pnas.org/content/early/2017/10/23/1713050114">http://www.pnas.org/content/early/2017/10/23/1713050114</a></p>
+<hr class="docutils" />
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ReconManager.html" class="btn btn-neutral float-right" title="ReconManager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to sysbiotech’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Gi Bae Kim.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
