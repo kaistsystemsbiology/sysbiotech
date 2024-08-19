@@ -20,6 +20,8 @@ Welcome to sysbiotech's documentation!
    DeepTFactor
    RetroPrecursorSelection
    DeepRFC
+   iBridge
+   DeepECtransformer
    
 
 
