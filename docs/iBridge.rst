@@ -6,7 +6,7 @@ iBridge
     :undoc-members: 
     :show-inheritance: 
     
-    iBrdige running procedure
+    iBridge running procedure
 
 
     -------------------------
