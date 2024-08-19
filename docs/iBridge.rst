@@ -7,8 +7,6 @@ iBridge
     :show-inheritance: 
     
     iBridge running procedure
-
-
     -------------------------
 
     **Note**: This project is to identify target reactions or metabolites that will enhance production of commercial chemicals through a metabolite-centric approach
@@ -23,7 +21,7 @@ iBridge
 
     2. Change the directory
 
-    .. code-block..
+    .. code-block::
             $ cd ibridge
 
 
