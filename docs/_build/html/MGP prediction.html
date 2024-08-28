@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iBridge &mdash; sysbiotech  documentation</title>
+  <title>MGP prediction &mdash; sysbiotech  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -21,8 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MELI-3D" href="MELI3D.html" />
-    <link rel="prev" title="DeepDDI" href="DeepDDI.html" /> 
+    <link rel="prev" title="DeepRFC" href="DeepRFC.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,13 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="ReconManager.html">ReconManager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DeepEC.html">DeepEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DeepDDI.html">DeepDDI</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">iBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iBridge.html">iBridge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MELI3D.html">MELI-3D</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MFA13C.html">13C-MFA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DeepTFactor.html">DeepTFactor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="RetroPrecursorSelection.html">RetroPrecursorSelection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DeepRFC.html">DeepRFC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MGP%20prediction.html">MGP prediction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MGP prediction</a></li>
 </ul>
 
         </div>
@@ -73,9 +72,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">iBridge</li>
+      <li class="breadcrumb-item active">MGP prediction</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/iBridge.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/MGP prediction.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -83,16 +82,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ibridge">
-<h1>iBridge<a class="headerlink" href="#ibridge" title="Link to this heading"></a></h1>
+  <section id="mgp-prediction">
+<h1>MGP prediction<a class="headerlink" href="#mgp-prediction" title="Link to this heading"></a></h1>
+<p><strong>How to install</strong></p>
+<hr class="docutils" />
+<p>It works on Linux operating system and has been tested on Ubuntu 16.04. The runtimes below are generated using a computer with the specs (32 GB RAM, Intel(R) Core(TM) i7-4790 CPU &#64; 3.60 GHz) and internet of speed around 80 Mbit/s.</p>
+<ol class="arabic">
+<li><p>Clone the repository</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://bitbucket.org/kaistsystemsbiology/mgp_prediction.git
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create and activate a conda environment</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>mgp_prediction
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yaml
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>MGPprediction
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>which should install in about 2 minutes</p>
+<hr class="docutils" />
+<p><strong>Implementation</strong>
+1. Create .csv file for flux (e.g.,exampleFlux.csv) and mutation (e.g.,exampleMutation.csv). Please referred to the format of each file in exampleInput directory.</p>
+<ol class="arabic" start="2">
+<li><p>Run MGP prediction. The following arguments are required: -o/–output_dir, -f/–flux, -mut/–mutation</p>
+<blockquote>
+<div><p><strong>Example</strong>
+.. code-block:: bash</p>
+<blockquote>
+<div><p>mkdir output
+python runMGPprediction.py -o ./output -f ./exampleInput/exampleFlux.csv -mut ./exampleInput/exampleMutation.csv</p>
+</div></blockquote>
+<p>The output file “predictedMGPs.csv” will be generated in output directory after computation.
+The run time for this source code on example input is about 90 seconds.</p>
+</div></blockquote>
+</li>
+<li><p>The output file is in .csv format and consists of four columns (i.e., Target gene, Target metabolite and its MetaNetX ID, and Target pathway) which represent information of predicted MGPs.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Reference</strong>
+Lee, G., Lee, S.M., Lee, S. et al. Prediction of metabolites associated with somatic mutations in cancers by using genome-scale metabolic models and mutation data. Genome Biol 25, 66 (2024). <a class="reference external" href="https://doi.org/10.1186/s13059-024-03208-8">https://doi.org/10.1186/s13059-024-03208-8</a></p>
+<hr class="docutils" />
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="DeepDDI.html" class="btn btn-neutral float-left" title="DeepDDI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="MELI3D.html" class="btn btn-neutral float-right" title="MELI-3D" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DeepRFC.html" class="btn btn-neutral float-left" title="DeepRFC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

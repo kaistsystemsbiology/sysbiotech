@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iBridge &mdash; sysbiotech  documentation</title>
+  <title>DeepMGR &mdash; sysbiotech  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -20,9 +20,7 @@
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MELI-3D" href="MELI3D.html" />
-    <link rel="prev" title="DeepDDI" href="DeepDDI.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,12 +43,12 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="GeTPRA.html">GeTPRA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ReconManager.html">ReconManager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DeepEC.html">DeepEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DeepDDI.html">DeepDDI</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">iBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iBridge.html">iBridge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MELI3D.html">MELI-3D</a></li>
 <li class="toctree-l1"><a class="reference internal" href="MFA13C.html">13C-MFA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DeepTFactor.html">DeepTFactor</a></li>
@@ -73,9 +71,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">iBridge</li>
+      <li class="breadcrumb-item active">DeepMGR</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/iBridge.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/DeepMGR.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -83,17 +81,64 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ibridge">
-<h1>iBridge<a class="headerlink" href="#ibridge" title="Link to this heading"></a></h1>
+  <section id="deepmgr">
+<h1>DeepMGR<a class="headerlink" href="#deepmgr" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Note: This source code was developed in Linux, and has been tested in Ubuntu 16.04 with Python 3.9</p></li>
+<li><p>Major dependency: rdkit</p></li>
+</ul>
+<p><strong>Source</strong></p>
+<ol class="arabic">
+<li><p>Clone the repository</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://bitbucket.org/kaistsystemsbiology/DeepMGR.git
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create and activate a conda environment</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+conda<span class="w"> </span>activate<span class="w"> </span>deepmgr
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Example</strong></p>
+<ul>
+<li><p>Run deepMGR with input files in ‘./input’.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>run_deepmgr.py<span class="w"> </span>-i<span class="w"> </span>-s<span class="w"> </span>MG1655
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Run deepMGR without input files in ‘./input’.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>run_deepmgr.py<span class="w"> </span>-b<span class="w"> </span>oxygen<span class="w"> </span>-c<span class="w"> </span><span class="o">[</span>Glucose,2<span class="o">]</span><span class="w"> </span><span class="o">[</span>Na2HPO4,12.8<span class="o">]</span><span class="w"> </span><span class="o">[</span>KH2PO4,3<span class="o">]</span><span class="w"> </span><span class="o">[</span>NaCl,0.5<span class="o">]</span><span class="w"> </span><span class="o">[</span>NH4Cl,1<span class="o">]</span>
+<span class="o">[</span>MgSO4,0.24<span class="o">]</span><span class="w"> </span><span class="o">[</span>CaCl2,0.0111<span class="o">]</span><span class="w"> </span>-s<span class="w"> </span>BW25113<span class="w"> </span>-g<span class="w"> </span>b0001
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>For more information:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>run_deepmgr.py<span class="w"> </span>-h
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Publication</strong>
+- Mun Su Kwon, Joshua Julio Adidjaja and Hyun Uk Kim. Predicting the effects of cultivation condition on gene expression levels in Escherichia coli by using deep learning.</p>
+<hr class="docutils" />
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="DeepDDI.html" class="btn btn-neutral float-left" title="DeepDDI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="MELI3D.html" class="btn btn-neutral float-right" title="MELI-3D" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

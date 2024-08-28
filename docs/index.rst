@@ -21,8 +21,8 @@ Welcome to sysbiotech's documentation!
    RetroPrecursorSelection
    DeepRFC
    DeepECtransformer
-   
-
+   MGP prediction   
+   DeepMGR
 
 Indices and tables
 ==================
