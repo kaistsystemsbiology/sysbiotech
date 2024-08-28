@@ -22,7 +22,7 @@ Welcome to sysbiotech's documentation!
    DeepRFC
    DeepECtransformer
    MGP prediction   
-
+   DeepMGR
 
 Indices and tables
 ==================
